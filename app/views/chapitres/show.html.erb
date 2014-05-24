@@ -10,5 +10,12 @@
   <%= @chapitre.titre %>
 </p>
 
+<p>
+  <strong>Sujet des Anecdotes :</strong>
+  <% @chapitre.anecdotes.each do |anecdote| %>
+	<td><%= anecdote.sujet %>,</td>
+	<% end %>
+</p>
+
 <%= link_to 'Edit', edit_chapitre_path(@chapitre) %> |
 <%= link_to 'Back', chapitres_path %>

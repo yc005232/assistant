@@ -5,6 +5,7 @@
     <tr>
       <th>Numero</th>
       <th>Titre</th>
+      <th>Sujet des Anecdotes :</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,9 @@
       <tr>
         <td><%= chapitre.numero %></td>
         <td><%= chapitre.titre %></td>
+	<% chapitre.anecdotes.each do |anecdote| %>
+	<td><%= anecdote.sujet %>,</td>
+	<% end %>
         <td><%= link_to 'Show', chapitre %></td>
         <td><%= link_to 'Edit', edit_chapitre_path(chapitre) %></td>
         <td><%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
