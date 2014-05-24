@@ -23,10 +23,11 @@
     <%= f.label :instant %><br>
     <%= f.text_field :instant %>
   </div>
-  <div class="field">
-    <%= f.label :chapitre_id %><br>
-    <%= f.number_field :chapitre_id %>
-  </div>
+   <% Personne.all.each do |personne| %>
+	<label><%= personne.nom %>
+	<%= check_box_tag "scene[personne_ids][]", personne.id,
+ @scene.personnes.include?(personne) %>
+<%end %>
   <div class="actions">
     <%= f.submit %>
   </div>
