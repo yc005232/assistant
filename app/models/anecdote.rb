@@ -1,3 +1,3 @@
 class Anecdote < ActiveRecord::Base
-	belongs_to :chapitres
+	belongs_to :chapitre
 end

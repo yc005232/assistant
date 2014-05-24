@@ -20,5 +20,10 @@
   <%= @scene.chapitre_id %>
 </p>
 
+<p>
+  <strong>Personnes:</strong>
+  <%= @scene.personnes.to_s %>
+</p>
+
 <%= link_to 'Edit', edit_scene_path(@scene) %> |
 <%= link_to 'Back', scenes_path %>

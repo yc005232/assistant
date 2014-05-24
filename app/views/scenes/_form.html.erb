@@ -26,7 +26,8 @@
    <% Personne.all.each do |personne| %>
 	<label><%= personne.nom %>
 	<%= check_box_tag "scene[personne_ids][]", personne.id,
- @scene.personnes.include?(personne) %>
+ @scene.personnes.include?(personne) %> 
+</label>
 <%end %>
   <div class="actions">
     <%= f.submit %>

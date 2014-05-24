@@ -7,6 +7,7 @@
       <th>Lieu</th>
       <th>Instant</th>
       <th>Chapitre</th>
+      <th>Personne</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
         <td><%= scene.lieu %></td>
         <td><%= scene.instant %></td>
         <td><%= scene.chapitre_id %></td>
+        <td><%= scene.personnes.to_s %></td>
         <td><%= link_to 'Show', scene %></td>
         <td><%= link_to 'Edit', edit_scene_path(scene) %></td>
         <td><%= link_to 'Destroy', scene, method: :delete, data: { confirm: 'Are you sure?' } %></td>
