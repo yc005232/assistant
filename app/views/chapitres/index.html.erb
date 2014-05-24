@@ -6,6 +6,7 @@
       <th>Numero</th>
       <th>Titre</th>
       <th>Sujet des Anecdotes :</th>
+      <th>Instant des scenes :</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,6 +20,9 @@
         <td><%= chapitre.titre %></td>
 	<% chapitre.anecdotes.each do |anecdote| %>
 	<td><%= anecdote.sujet %>,</td>
+	<% end %>
+        <% chapitre.scenes.each do |scene| %>
+	<td><%= scene.instant %>,</td>
 	<% end %>
         <td><%= link_to 'Show', chapitre %></td>
         <td><%= link_to 'Edit', edit_chapitre_path(chapitre) %></td>
