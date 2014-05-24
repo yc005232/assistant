@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recit: MyString
+  lieu: MyString
+  instant: MyString
+  chapitre_id: 1
+
+two:
+  recit: MyString
+  lieu: MyString
+  instant: MyString
+  chapitre_id: 1
