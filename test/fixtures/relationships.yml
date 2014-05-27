@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personne_id: MyString
+  scene_id: MyString
+
+two:
+  personne_id: MyString
+  scene_id: MyString

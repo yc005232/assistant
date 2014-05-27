@@ -19,6 +19,25 @@
     <%= f.label :titre %><br>
     <%= f.text_field :titre %>
   </div>
+
+
+
+<div class="field">
+ <% Scene.all.each do |scene| %>
+ <label><%= scene.instant %>
+   <%= check_box_tag "chapitre[scene_ids][]", scene.id %> 
+ </label>
+ <% end %>
+</div>
+
+<div class="field">
+ <% Anecdote.all.each do |anecdote| %>
+ <label><%= anecdote.sujet %>
+   <%= check_box_tag "chapitre[anecdote_ids][]", anecdote.id %> 
+ </label>
+ <% end %>
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

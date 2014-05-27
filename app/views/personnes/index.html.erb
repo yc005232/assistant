@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Nom</th>
+      <th>Scene instant</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,6 +15,9 @@
     <% @personnes.each do |personne| %>
       <tr>
         <td><%= personne.nom %></td>
+	    <% personne.scenes.each do |scene| %>
+		<td><%= scene.instant %>,</td>
+	<% end %>
         <td><%= link_to 'Show', personne %></td>
         <td><%= link_to 'Edit', edit_personne_path(personne) %></td>
         <td><%= link_to 'Destroy', personne, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -21,7 +21,9 @@
         <td><%= scene.lieu %></td>
         <td><%= scene.instant %></td>
         <td><%= scene.chapitre_id %></td>
-        <td><%= scene.personnes.to_s %></td>
+        <% scene.personnes.each do |personne| %>
+		<td><%= personne.nom %>,</td>
+	<% end %>
         <td><%= link_to 'Show', scene %></td>
         <td><%= link_to 'Edit', edit_scene_path(scene) %></td>
         <td><%= link_to 'Destroy', scene, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -4,6 +4,10 @@
   <strong>Nom:</strong>
   <%= @personne.nom %>
 </p>
-
+<p> <strong>Scene instant:</strong>
+<% @personne.scenes.each do |scene| %>
+		<td><%= scene.instant %>,</td>
+	<% end %>
+</p>
 <%= link_to 'Edit', edit_personne_path(@personne) %> |
 <%= link_to 'Back', personnes_path %>

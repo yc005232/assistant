@@ -22,7 +22,9 @@
 
 <p>
   <strong>Personnes:</strong>
-  <%= @scene.personnes.to_s %>
+  <% @scene.personnes.each do |personne| %>
+		<td><%= personne.nom %>,</td>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_scene_path(@scene) %> |

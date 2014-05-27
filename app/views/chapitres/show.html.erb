@@ -18,11 +18,13 @@
 </p>
 
 <p>
-  <strong>Instant des Scenes :</strong>
+  <strong>Recit des Scenes :</strong>
   <% @chapitre.scenes.each do |scene| %>
-	<td><%= scene.instant %>,</td>
+	<td><%= scene.recit %>,</td>
 	<% end %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_chapitre_path(@chapitre) %> |
 <%= link_to 'Back', chapitres_path %>
