@@ -12,7 +12,7 @@ describe Scene do
   it { should respond_to(:chapitre_id) }
   it { should respond_to(:chapitre) }
   its(:chapitre) { should eq chapitre }
-
+  it { should have_and_belong_to_many(:personnes) }
   it { should be_valid }
 
   describe "when instant is not present" do

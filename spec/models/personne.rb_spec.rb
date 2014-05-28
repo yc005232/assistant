@@ -8,7 +8,7 @@ describe Personne do
   subject {@personne}
   
   it {should respond_to(:nom)} 
-
+  it { should have_and_belong_to_many(:scenes) }
   it {should be_valid}
 
   describe "when name is not present" do
