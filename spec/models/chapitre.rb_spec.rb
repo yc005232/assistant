@@ -9,6 +9,8 @@ describe Chapitre do
   
 
   it {should respond_to(:titre)} 
+  it {should respond_to(:anecdotes)}
+  it {should respond_to(:scenes)}  
 
   it {should be_valid}
 
@@ -20,35 +22,4 @@ describe Chapitre do
      before { @chapitre.numero = "a" }
      it { should_not be_valid }
   end
-
-
-
-describe "when Chapitre.new is called" do
-  before(:each) do
-    @chapitre = Chapitre.new
-  end
-
-  
-  it "should be ok with an associated scene" do
-    @chapitre.scene = Scene.new
-    @chapitre.should have(:no).errors_on(:scenes)
-  end
-
-  it "should have an associated scene" do
-    @chapitre.should have_at_least(1).error_on(:scene)
-  end
-
-  
-  it "should be ok with at least one associated anecdote" do
-    @chapitre.anecdotes.build
-    @chapitre.should have(:no).errors_on(:anecdote)
-  end
-
-  it "should have at least one associated author" do
-    @chapitre.should have_at_least(1).error_on(:anecdote)
-  end
-
-end
-
-
 end
