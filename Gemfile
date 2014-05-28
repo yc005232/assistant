@@ -51,3 +51,4 @@ end
 
 gem 'factory_girl_rails'
 gem 'shoulda', '~> 3.5.0'
+gem 'capybara'

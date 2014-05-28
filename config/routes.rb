@@ -3,6 +3,7 @@ Assistant::Application.routes.draw do
   get "static_pages/help"
   get "static_pages/recappersonnes"
   get "static_pages/recapchapitre"
+  get "static_pages/about"
   resources :personnes
 
   resources :scenes
