@@ -15,6 +15,11 @@ describe Personne do
      before {@personne.nom=" "}
      it {should_not be_valid}
   end
+  describe "when name is already took" do
+     before {pers=Personne.new(nom:"Example Personne")
+      pers.save}
+     it {should_not be_valid}
+  end
   describe "when name is too long" do
      before { @personne.nom = "a" * 51 }
      it { should_not be_valid }
