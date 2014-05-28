@@ -1,15 +1,19 @@
 require 'spec_helper'
 
 describe Anecdote do
-  before do
-	@anecdote=Anecdote.new(sujet:"Example sujet",texte: "Example texte",theme:"Example theme",chapitre_id: 0)
-  end
+  let(:chapitre) { FactoryGirl.create(:chapitre) }
+  before { @anecdote = chapitre.anecdotes.build(sujet:"Example sujet",texte: "Example texte",theme:"Example theme",chapitre_id: 0) }
 
-  subject {@anecdote}
-  
-  it {should respond_to(:sujet)} 
+  subject { @anecdote }
 
-  it {should be_valid}
+  it { should respond_to(:sujet) }
+  it { should respond_to(:texte) }
+  it { should respond_to(:theme) }
+  it { should respond_to(:chapitre_id) }
+  it { should respond_to(:chapitre) }
+  its(:chapitre) { should eq chapitre }
+
+  it { should be_valid }
 
   describe "when sujet is not present" do
      before {@anecdote.sujet=" "}
