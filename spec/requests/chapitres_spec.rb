@@ -1,11 +1,25 @@
 require 'spec_helper'
 
-describe "Chapitres" do
-  describe "GET /chapitres" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get chapitres_path
-      response.status.should be(200)
+describe "User pages" do
+
+  subject { page }
+
+  describe "Chapitres" do
+    before do
+      new_chapitre FactoryGirl.create(:chapitre)
+      FactoryGirl.create(:chapitre, numero: 1, titre: "Example title" )
+      FactoryGirl.create(:chapitre, numero: 2, titre: "Example titre" )
+      visit chapitres_path
+    end
+
+    it { should have_title('All chapitres') }
+    it { should have_content('All chapitres') }
+
+    it "should list each chapter" do
+      Chapitre.all.each do |chapitre|
+        expect(page).to have_selector('li', text: chapitre.titre)
+      end
     end
   end
+  
 end

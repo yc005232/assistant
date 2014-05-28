@@ -1,37 +1,26 @@
-<h1>Listing chapitres</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Numero</th>
-      <th>Titre</th>
-      <th>Sujet des Anecdotes :</th>
-      <th>Instant des scenes :</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<% provide(:title, 'All chapitres') %>
+<h1>All chapitres</h1>
+    <ul class="chapitres">
+      <h2>
+<%= link_to 'New Chapitre', new_chapitre_path %> </h2>
     <% @chapitres.each do |chapitre| %>
-      <tr>
-        <td><%= chapitre.numero %></td>
-        <td><%= chapitre.titre %></td>
-	<% chapitre.anecdotes.each do |anecdote| %>
-	<td><%= anecdote.sujet %>,</td>
+      <li>
+        <h2><%= chapitre.numero %>.
+        <%= chapitre.titre %> </h2>
+	Sujet des anecdotes présentes : <% chapitre.anecdotes.each do |anecdote| %>
+	<%= anecdote.sujet %> 
 	<% end %>
-        <% chapitre.scenes.each do |scene| %>
-	<td><%= scene.instant %>,</td>
+       <br> Instant des scenes présentes: <% chapitre.scenes.each do |scene| %>
+	 <%= scene.instant %> </li>
 	<% end %>
-        <td><%= link_to 'Show', chapitre %></td>
-        <td><%= link_to 'Edit', edit_chapitre_path(chapitre) %></td>
-        <td><%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+  <ul><%= link_to 'Show', chapitre %>
+        <%= link_to 'Edit', edit_chapitre_path(chapitre) %>
+        <%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </ul>
+  
 
-<%= link_to 'New Chapitre', new_chapitre_path %>
+  <%end%>
+</ul>
+
+
