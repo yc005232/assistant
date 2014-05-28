@@ -23,9 +23,9 @@
     <%= f.label :instant %><br>
     <%= f.text_field :instant %>
   </div>
-<div>   <% Personne.all.each do |personne| %>
-	<%= personne.nom %>
-	<%= check_box_tag "scene[personne_ids][]", personne.id,@scene.personnes.include?(personne) %> 
+<div> <% Personne.all.each do |personne| %>
+<%= personne.nom %>
+<%= check_box_tag "scene[personne_ids][]", personne.id,@scene.personnes.include?(personne) %>
 </div>
 <%end %>
   <div class="actions">

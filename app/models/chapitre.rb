@@ -3,5 +3,5 @@ class Chapitre < ActiveRecord::Base
 	has_many :anecdotes
 
 	validates :titre, presence: true 
-	validates :numero ,uniqueness: true, numericality: { only_integer: true }
+	validates :numero ,uniqueness: true,:allow_blank => true , numericality: { only_integer: true }
 end

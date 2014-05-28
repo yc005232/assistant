@@ -1,0 +1,14 @@
+<li>
+        <h2><%= chapitre.numero %>.
+        <%=link_to  chapitre.titre , chapitre %> </h2>
+	Sujet des anecdotes présentes : <% chapitre.anecdotes.each do |anecdote| %>
+	<%= anecdote.sujet %> 
+	<% end %>
+       <br> Instant des scenes présentes: <% chapitre.scenes.each do |scene| %>
+	 <%= scene.instant %> </li>
+	<% end %>
+
+  <ul>
+        <%= link_to 'Edit', edit_chapitre_path(chapitre) %>
+        <%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </ul>
