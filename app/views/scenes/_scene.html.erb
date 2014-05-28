@@ -1,0 +1,11 @@
+<li><h2>
+        <%= link_to scene.instant , scene %>.
+	<%=scene.lieu %> </h2>
+        <br>Chapitre :  <%= scene.chapitre_id %><br>
+        Personnes : <% scene.personnes.each do |personne| %>
+		<td><%=link_to personne.nom,personne %>,</td>
+	<% end %> <br>
+	Recit : <%=scene.recit %> </li>
+        <ul>
+        <%= link_to 'Edit', edit_scene_path(scene) %>
+        <%= link_to 'Destroy', scene, method: :delete, data: { confirm: 'Are you sure?' } %></ul>

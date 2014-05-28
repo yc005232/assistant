@@ -1,0 +1,8 @@
+<li>
+        <h2><%=link_to personne.nom , personne %></h2>
+	    <% personne.scenes.each do |scene| %>
+		<td>Instant d'apparition (scenes) : <%=link_to scene.instant ,scene %>,</td><br>
+	<% end %></li>
+        
+        <ul><td><%= link_to 'Edit', edit_personne_path(personne) %></td>
+        <td><%= link_to 'Destroy', personne, method: :delete, data: { confirm: 'Are you sure?' } %></ul>

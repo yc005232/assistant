@@ -1,31 +1,15 @@
-<h1>Listing personnes</h1>
+<% provide(:title, 'All personnes') %>
+<h1>All personnes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Scene instant</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= will_paginate %>
 
-  <tbody>
+    <ul class="personnes">
+      <h2>
+<%= link_to 'New Personne', new_personne_path %> </h2>
     <% @personnes.each do |personne| %>
-      <tr>
-        <td><%= personne.nom %></td>
-	    <% personne.scenes.each do |scene| %>
-		<td><%= scene.instant %>,</td>
-	<% end %>
-        <td><%= link_to 'Show', personne %></td>
-        <td><%= link_to 'Edit', edit_personne_path(personne) %></td>
-        <td><%= link_to 'Destroy', personne, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= render personne %>
+  <% end %>
 
-<br>
+</ul>
 
-<%= link_to 'New Personne', new_personne_path %>
+<%= will_paginate %>

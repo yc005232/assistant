@@ -1,37 +1,15 @@
-<h1>Listing scenes</h1>
+<% provide(:title, 'All scenes') %>
+<h1>All scenes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Recit</th>
-      <th>Lieu</th>
-      <th>Instant</th>
-      <th>Chapitre</th>
-      <th>Personne</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= will_paginate %>
 
-  <tbody>
+    <ul class="scenes">
+      <h2>
+<%= link_to 'New Scene', new_scene_path %> </h2>
     <% @scenes.each do |scene| %>
-      <tr>
-        <td><%= scene.recit %></td>
-        <td><%= scene.lieu %></td>
-        <td><%= scene.instant %></td>
-        <td><%= scene.chapitre_id %></td>
-        <% scene.personnes.each do |personne| %>
-		<td><%= personne.nom %>,</td>
-	<% end %>
-        <td><%= link_to 'Show', scene %></td>
-        <td><%= link_to 'Edit', edit_scene_path(scene) %></td>
-        <td><%= link_to 'Destroy', scene, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= render scene %>
+  <% end %>
+      
+</ul>
 
-<br>
-
-<%= link_to 'New Scene', new_scene_path %>
+<%= will_paginate %>

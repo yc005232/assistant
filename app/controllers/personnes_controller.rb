@@ -4,7 +4,7 @@ class PersonnesController < ApplicationController
   # GET /personnes
   # GET /personnes.json
   def index
-    @personnes = Personne.all
+    @personnes = Personne.paginate(page: params[:page])
   end
 
   # GET /personnes/1

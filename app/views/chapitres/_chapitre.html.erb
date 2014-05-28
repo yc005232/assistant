@@ -2,10 +2,10 @@
         <h2><%= chapitre.numero %>.
         <%=link_to  chapitre.titre , chapitre %> </h2>
 	Sujet des anecdotes présentes : <% chapitre.anecdotes.each do |anecdote| %>
-	<%= anecdote.sujet %> 
+	<%=link_to anecdote.sujet,anecdote %> 
 	<% end %>
        <br> Instant des scenes présentes: <% chapitre.scenes.each do |scene| %>
-	 <%= scene.instant %> </li>
+	 <%=link_to scene.instant , scene %> </li>
 	<% end %>
 
   <ul>

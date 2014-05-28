@@ -1,0 +1,10 @@
+<li><h2><%= link_to anecdote.sujet ,anecdote%></td></h2>
+	<br>Theme : <%= anecdote.theme %>
+        <br>Chapitre <%= anecdote.chapitre_id %>
+        <br>Texte : <%= anecdote.texte %>
+	<br>
+        
+        
+        
+        <ul><%= link_to 'Edit', edit_anecdote_path(anecdote) %>
+        <%= link_to 'Destroy', anecdote, method: :delete, data: { confirm: 'Are you sure?' } %></ul>

@@ -1,33 +1,18 @@
-<h1>Listing anecdotes</h1>
+<% provide(:title, 'All anecdotes') %>
+<h1>All anecdotes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Sujet</th>
-      <th>Texte</th>
-      <th>Theme</th>
-      <th>Chapitre</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= will_paginate %>
 
-  <tbody>
+    <ul class="anecdotes">
+      <h2>
+<%= link_to 'New Anecdote', new_anecdote_path %> </h2>
     <% @anecdotes.each do |anecdote| %>
-      <tr>
-        <td><%= anecdote.sujet %></td>
-        <td><%= anecdote.texte %></td>
-        <td><%= anecdote.theme %></td>
-        <td><%= anecdote.chapitre_id %></td>
-        <td><%= link_to 'Show', anecdote %></td>
-        <td><%= link_to 'Edit', edit_anecdote_path(anecdote) %></td>
-        <td><%= link_to 'Destroy', anecdote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= render anecdote %>
+  <% end %>
+      
+  
 
-<br>
+  
+</ul>
 
-<%= link_to 'New Anecdote', new_anecdote_path %>
+<%= will_paginate %>

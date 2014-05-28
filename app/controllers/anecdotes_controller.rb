@@ -4,7 +4,7 @@ class AnecdotesController < ApplicationController
   # GET /anecdotes
   # GET /anecdotes.json
   def index
-    @anecdotes = Anecdote.all
+    @anecdotes = Anecdote.paginate(page: params[:page])
   end
 
   # GET /anecdotes/1
