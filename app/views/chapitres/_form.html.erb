@@ -23,6 +23,8 @@
 
 
 <div class="field">
+  <br> <br> <br>
+  Choix des scenes : <br>
  <% Scene.all.each do |scene| %>
  <label><%= scene.instant %>
    <%= check_box_tag "chapitre[scene_ids][]", scene.id ,@chapitre.scenes.include?(scene) %> 
@@ -31,6 +33,8 @@
 </div>
 
 <div class="field">
+  <br> <br> <br>
+  Choix des anecdotes : <br>
  <% Anecdote.all.each do |anecdote| %>
  <label><%= anecdote.sujet %>
    <%= check_box_tag "chapitre[anecdote_ids][]", anecdote.id ,@chapitre.anecdotes.include?(anecdote) %> 

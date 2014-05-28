@@ -1,5 +1,6 @@
 <%= form_for @personne do |f| %>
 <label>Nom: <%= f.text_field :nom %> </label>
+<div>choix des scenes <br></div>
 <% Scene.all.each do |scene| %>
 <label><%= scene.instant %>
 <%= check_box_tag "personne[scene_ids][]", scene.id, @personne.scenes.include?(scene) %>
