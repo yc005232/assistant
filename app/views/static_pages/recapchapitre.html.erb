@@ -1,2 +1,13 @@
 <h1>StaticPages#recapchapitre</h1>
-<p>Find me in app/views/static_pages/recapchapitre.html.erb</p>
+<p>Liste des chapitres avec scene et personne y aparaissant : </p>
+
+<% Chapitre.all.each do |chapitre| %>  
+	
+		<h2>Dans le chapitre : <%=	link_to chapitre.titre , chapitre %> numero <%=  chapitre.numero %> 
+			<%if chapitre.scenes!=[]%> on trouve la scene : <% chapitre.scenes.each do |scene| %> 
+			<%if scene.personnes!=[]%> a l'instant <%= link_to scene.instant,scene %> contenant 
+<%scene.personnes.each do |personne| %> comme personne(s) : <%= personne.nom %>, <%end%> <%end%>  <%end%> <br> <%end%>
+		</h2>
+		
+		
+<%end%>

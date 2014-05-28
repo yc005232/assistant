@@ -1,2 +1,8 @@
 <h1>StaticPages#recappersonnes</h1>
-<p>Find me in app/views/static_pages/recappersonnes.html.erb</p>
+<p>Personnes qui ne sont encore apparu dans aucune scene : </p>
+
+<% Personne.all.each do |personne| %>  
+	<%if personne.scene_ids==[] %>
+		<h2><%=	link_to personne.nom , personne %> </h2>
+		<%end%>
+<%end%>

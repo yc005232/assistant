@@ -3,7 +3,7 @@ namespace :db do
   task populate: :environment do
     Chapitre.create!(numero: 0,titre: "Example de chapitre")
 
-    99.times do |n|
+    10.times do |n|
       titre  = Faker::Lorem.sentence
       numero = n+1
       Chapitre.create!(numero: numero,titre: titre)
@@ -13,7 +13,7 @@ namespace :db do
   task populate: :environment do
     Personne.create!(nom: "nom de test")
 
-    99.times do |n|
+    10.times do |n|
       nom  = Faker::Name.name
       
       Personne.create!(nom: nom)
@@ -23,7 +23,7 @@ namespace :db do
   task populate: :environment do
     Scene.create!(recit: "recit de test",instant: "instant test",lieu: "lieu test")
 
-    99.times do |n|
+    10.times do |n|
       recit  = Faker::Lorem.paragraph
       lieu=Faker::Address.city
       instant=Faker::Address.time_zone
@@ -34,7 +34,7 @@ namespace :db do
   task populate: :environment do
     Anecdote.create!(sujet: "sujet de test",texte: "texte test")
 
-    99.times do |n|
+    10.times do |n|
       sujet= Faker::Lorem.sentence
       texte=Faker::Lorem.paragraph
       
