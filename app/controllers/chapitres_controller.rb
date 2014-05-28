@@ -4,7 +4,7 @@ class ChapitresController < ApplicationController
   # GET /chapitres
   # GET /chapitres.json
   def index
-    @chapitres = Chapitre.all
+    @chapitres = Chapitre.paginate(page: params[:page])
   end
 
   # GET /chapitres/1

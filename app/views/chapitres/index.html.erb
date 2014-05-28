@@ -1,12 +1,15 @@
 <% provide(:title, 'All chapitres') %>
 <h1>All chapitres</h1>
+
+<%= will_paginate %>
+
     <ul class="chapitres">
       <h2>
 <%= link_to 'New Chapitre', new_chapitre_path %> </h2>
     <% @chapitres.each do |chapitre| %>
       <li>
         <h2><%= chapitre.numero %>.
-        <%= chapitre.titre %> </h2>
+        <%=link_to  chapitre.titre , chapitre %> </h2>
 	Sujet des anecdotes présentes : <% chapitre.anecdotes.each do |anecdote| %>
 	<%= anecdote.sujet %> 
 	<% end %>
@@ -14,7 +17,7 @@
 	 <%= scene.instant %> </li>
 	<% end %>
 
-  <ul><%= link_to 'Show', chapitre %>
+  <ul>
         <%= link_to 'Edit', edit_chapitre_path(chapitre) %>
         <%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %>
       </ul>
@@ -23,4 +26,4 @@
   <%end%>
 </ul>
 
-
+<%= will_paginate %>

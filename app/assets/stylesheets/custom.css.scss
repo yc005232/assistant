@@ -49,6 +49,10 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: $grayLight;
+  a:link {color:blue;}    /* unvisited link */
+  a:visited {color:black;} /* visited link */
+  a:hover {color:red;}   /* mouse over link */
+  a:active {color:brown;}  /* selected link */
 }
 
 p {
