@@ -4,22 +4,28 @@ describe "User pages" do
 
   subject { page }
 
-  describe "Chapitres" do
-    before do
-      new_chapitre FactoryGirl.create(:chapitre)
-      FactoryGirl.create(:chapitre, numero: 1, titre: "Example title" )
-      FactoryGirl.create(:chapitre, numero: 2, titre: "Example titre" )
+       describe "index" do
+    let(:chapitre) { FactoryGirl.create(:chapitre) }
+    before(:each) do
+      new_chapitre chapitre
       visit chapitres_path
     end
 
     it { should have_title('All chapitres') }
     it { should have_content('All chapitres') }
 
-    it "should list each chapter" do
-      Chapitre.all.each do |chapitre|
-        expect(page).to have_selector('li', text: chapitre.titre)
+    describe "pagination" do
+
+      before(:all) { 30.times { FactoryGirl.create(:chapitre) } }
+      after(:all)  { Chapitre.delete_all }
+
+      it { should have_selector('div.pagination') }
+
+      it "should list each chapitre" do
+        Chapitre.paginate(page: 1).each do |chapitre|
+          expect(page).to have_selector('li', text: chapitre.titre)
       end
     end
   end
-  
+  end
 end

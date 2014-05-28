@@ -1,7 +1,7 @@
 FactoryGirl.define do
     factory :chapitre do
-        numero 0
-        titre "Example titre"
+        sequence(:numero) {|n| n}
+        sequence (:titre) { |n| "Example titre_#{n}@example.com"}
         
   end
 end
