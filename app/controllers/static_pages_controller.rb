@@ -10,4 +10,11 @@ class StaticPagesController < ApplicationController
 
   def recapchapitre
   end
+  
+  def about
+  end
+
+  def contact
+  end
 end
+

@@ -52,3 +52,6 @@ end
 gem 'factory_girl_rails'
 gem 'shoulda', '~> 3.5.0'
 gem 'capybara'
+
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
